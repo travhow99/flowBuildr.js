@@ -1,0 +1,47 @@
+#sortable1, #sortable2 {
+  border: 1px solid #eee;
+  width: 260px;
+  min-height: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0 0 0;
+  float: left;
+  margin-right: 10px;
+}
+
+#sortable1 li, #sortable2 li {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1.2em;
+  border: 1px solid #00000045;
+}
+
+.placeholder {
+  background: red;
+}
+
+
+
+/* Pose stylings */
+.sanskrit {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.pose-pic {
+  float: right;
+  width: 35px;
+  height: 35px;
+  padding: 4px;
+  border: 1px #c7c3c3 solid;
+  background-color: #c7c3c3;
+  border-radius: 50%;
+}
+
+.info {
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  color: lightblue;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Yoga Flow Builder</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        flowbuildr
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid flows">
+                <h1>flowbuildr</h1>
+                <div class='row'>
+                  <div id="bank" class="col-xs-6 column">
+                    <ul id="sortable1">
+                      <h3>Pose Bank</h3>
+                    </ul>
+
+                  </div>
+                  <div id="flow" class="col-xs-6 column">
+                    <ul id="sortable2">
+                      <h3>Flow</h3>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $('.drag').draggable();
+
+      /*$( "#sortable1" ).sortable({
+        placeholder: 'placeholder',
+        forcePlaceholderSize: true,
+        helper: "clone",
+        revert: true,
+        connectWith: ".connectedSortable",
+        remove: function(event, ui) {
+                ui.item.clone().appendTo('#sortable2');
+                $(this).sortable('cancel');
+            }
+      }).disableSelection();*/
+      $( "#sortable2" ).sortable({
+        revert: true
+      });
+      $( ".drag" ).draggable({
+        connectToSortable: "#sortable2",
+        helper: "clone",
+        revert: "invalid",
+        start: function(event, ui){
+          $(ui.helper).css('width', `${ $(event.target).width() }px`);
+        }
+      });
+    });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <script type="text/javascript" src="poseData.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+
+</body>
+
+</html>
